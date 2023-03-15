@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Location and Weather</title>
+        <style>
+            body {
+                margin-left: 20px;
+            }
+            #icon {
+                width: 200px;
+                height: 200px;
+                background-size: 100%;
+            }
+            td {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Location and Weather</h1>
+        <h2>Location</h2>
+        <p>Your latitude is <span id="latitude"></span></p>
+        <p>Your longitude is <span id="longitude"></span></p>
+        <p>You are located in <span id="city-state"></span></p>
+        <h2>Weather</h2>
+        <div id="weather-reports"></div>
+        <div id="time"></div>
+        <div id="forecast"></div>
+        <div id="icon"></div>
+        <table id="table">
+            <tr>
+                <th>Time</th>
+                <th>Temperature</th>
+                <th>Forecast</th>
+                <th>Image</th>
+            </tr>
+        </table>
+        <script src="script.js"></script>
+    </body>
+</html>
