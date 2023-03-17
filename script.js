@@ -27,13 +27,6 @@ async function success(pos) {
     const state = generalData['properties']['relativeLocation']['properties']['state'];    
     document.getElementById('city-state').innerHTML = city+', '+state;
     const grid = await getJsonFromUrl(coordJson['properties']['forecast']);
-    forecast = grid['properties']['periods'][0]['detailedForecast'];
-    time = grid['properties']['periods'][0]['name'];
-    console.log(forecast);
-    document.getElementById('time').innerHTML = time;
-    document.getElementById('forecast').innerHTML = forecast;
-    const icon_url = grid['properties']['periods'][0]['icon'].replace('size=medium', 'size=large');
-    document.getElementById('icon').style.backgroundImage = `url(${icon_url})`;
     populateTable(grid['properties']['periods']);
     mydata = grid
 }
@@ -45,7 +38,7 @@ function populateTable(periods) {
         const currentItem = periods[i];
 
         if(!currentItem['isDaytime']) {
-            tr.style.background = '#444';
+            tr.style.background = '#333';
             tr.style.color = 'white';
         }
 
